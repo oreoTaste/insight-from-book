@@ -3,7 +3,7 @@ package bookname.algorithm.solvingQuiz.ch00_05;
 import java.util.Scanner;
 
 // ch0.5 연결리스트 (LinkedList)
-// code0-11 연결리스트로 큐 작성하기
+// code0-11 ~ 0-12 연결리스트로 큐 작성하기
 public class Code00_1112 {
   int size = 0;
   Node first = null;
@@ -19,8 +19,9 @@ public class Code00_1112 {
         originalInput = scanner.nextLine();
         input = Integer.parseInt(originalInput);
       } catch(NumberFormatException e) {
-        if(originalInput.equalsIgnoreCase("quit"))
+        if(originalInput.equalsIgnoreCase("quit")) {
           break;
+        }
         continue;
       }
       if(input > 0) {
@@ -29,7 +30,9 @@ public class Code00_1112 {
       }
       if(input == 0) {
         Object dequeValue = obj.delete_node();
-        if(dequeValue == null) continue;
+        if(dequeValue == null) {
+          continue;
+        }
         System.out.printf("[%s]\n",dequeValue);
       }
     } while(input >= 0);
