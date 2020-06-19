@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Flexbox Practice - 1. container</title>
+</head>
+<body style="margin:0;">
+  <div class="container">
+    <div class="item item1">#1</div>
+    <div class="item item2">#2</div>
+    <div class="item item3">#3</div>
+    <div class="item item4">#4</div>
+    <div class="item item5">#5</div>
+    <div class="item item6">#6</div>
+    <div class="item item7">#7</div>
+    <div class="item item8">#8</div>
+    <div class="item item9">#9</div>
+    <div class="item item10">#10</div>
+  </div>
+</body>
+
+  <style>
+    .container {
+      background-color: lightGray;
+      height: 100vh;
+      /* 
+      1. display:flex로 지정하면 flex 속성을 사용할 수 있음 */
+      display: flex;
+      /*
+      2. flex할 방향
+      flex-direction: row-reverse;
+      3. 내용물이 넘칠때 구겨넣을것인지(nowrap) 다음줄로 넘길것인지(wrap, wrap-reverse(반대방향)) 선택가능
+      flex-wrap: wrap;
+      4. flex-flow: flex-direction + flex-wrap을 같이 사용할 수 있는 attribute명
+      */
+      flex-flow: row-reverse wrap-reverse;
+      /*
+      5. justify-content: flow방향에 각각을 어떻게 나열할지 지정 
+      (flex-start, flex-end, space-around, space-betwwen, center 등)
+      +a) justify는 flex 진행방향을 조정하고, align-은 flex의 진행방향 반대로 속성을 조절한다.
+      */
+      justify-content: space-between;
+      /*
+      6. align-items: flex전체를 어디에 맞출것인지 지정
+      (flex-start, flex-end, center 등)*/
+      align-items: flex-end;
+      /*
+      7. align-content: flex전체를 어디에 배열할 것인지 지정
+      (flex-start, flex-end, center 등)*/
+      align-content: center;
+    }
+    
+    .item {
+      border:1px solid black;
+      width: 100px;
+      height: 100px;
+    }
+    .item1 {background-color: red;}
+    .item2 {background-color: orange;}
+    .item3 {background-color: yellow; height: 200px;}
+    .item4 {background-color: lightGreen;}
+    .item5 {background-color: green;}
+    .item6 {background-color: lightBlue;}
+    .item7 {background-color: blue;}
+    .item8 {background-color: darkBlue;}
+    .item9 {background-color: purple;}
+    .item10 {background-color: #300063;}
+
+  </style>
+</html>
