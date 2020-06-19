@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Flexbox Practice - 2. item</title>
+</head>
+<body style="margin:0;">
+  <div class="container">
+    <div class="item item1">#1</div>
+    <div class="item item2">#2</div>
+    <div class="item item3">#3</div>
+    <div class="item item4">#4</div>
+    <div class="item item5">#5</div>
+    <div class="item item6">#6</div>
+    <div class="item item7">#7</div>
+    <div class="item item8">#8</div>
+    <div class="item item9">#9</div>
+    <div class="item item10">#10</div>
+  </div>
+</body>
+
+  <style>
+    .container {
+      background-color: lightGray;
+      height: 100vh;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      align-content: center;
+    }
+    
+    .item {
+      border:1px solid black;
+      width: 100px;
+      height: 100px;
+    }
+    /*
+    1. order: flex-flow에서 순서를 바꿀수 있다.
+       기본값은 0이므로 양수인경우 후순위, 음수인경우 선순위로 정렬된다.
+    2. align-self: align-items에 해당되는 속성이 각각 item에 적용된다.
+       해당 item만 아래로 배열하거나 중간배열 등이 가능하다.
+    */
+    .item1 {background-color: red; order: 1; align-self: flex-start;}
+    /*
+    3. flex-shrink : nowrap인 상태에서 해당 item 의 크기보다 더 화면이 줄어들때,
+       줄어드는 비율을 수치화한것이다. (숫자가 클수록 더 빨리 줄어든다.)
+    */
+    .item2 {background-color: orange; flex-shrink: 1;}
+    .item3 {background-color: yellow; flex-shrink: 2; height: 200px;}
+    .item4 {background-color: lightGreen; flex-shrink: 3; align-self: center;}
+    .item5 {background-color: green; flex-shrink: 4; align-self: flex-start;}
+    .item6 {background-color: lightBlue; flex-shrink: 5; }
+    /*
+    4. flex-grow : nowrap인 상태에서 해당 item 의 크기보다 더 화면이 늘어날때,
+       늘어나는 비율을 수치화한것이다. (숫자가 클수록 더 빨리 늘어난다.)
+    */
+    .item7 {background-color: blue; flex-grow: 1;}
+    .item8 {background-color: darkBlue;flex-grow: 2;}
+    .item9 {background-color: purple;flex-grow: 3;}
+    .item10 {background-color: #300063;flex-grow: 4;}
+
+  </style>
+</html>
