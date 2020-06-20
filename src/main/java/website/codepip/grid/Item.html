@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Grid Practice - 1. Item</title>
+</head>
+<body>
+  <div class="container">
+    <div class="item item1">#1</div>
+    <div class="item item2">#2</div>
+    <div class="item item3">#3</div>
+    <div class="item item4">#4</div>
+    <div class="item item5">#5</div>
+    <div class="item item6">#6</div>
+    <div class="item item7">#7</div>
+    <div class="item item8">#8</div>
+    <div class="item item9">#9</div>
+    <div class="item item10">#10</div>
+    <div class="item item11">#11</div>
+    <div class="item item12">#12</div>
+  </div>
+</body>
+
+<style>
+  body {margin: 0; background-color: white;}
+  .container {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr 1fr ;
+    background-color: gray;
+  }
+  .item12 {
+    /*
+    1. 원하는 item을 선택하여 위치를 지정할 수 있다.
+    grid-column-start ~ grid-column-end로 열을 지정하고 (이름 통합해서 grid-column 가능)
+    grid-row-start ~ grid-row-end로 행을 지엉하거나 (이를 통합해서 grid-row 가능)
+       이를 모두 통합해서 grid-area로 지정할 수 있다.
+    */
+    border: 5px dashed black;
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    /*
+    grid-column: 2/ span 1;
+    grid-row: 2/ 3;
+    grid-area: 2/2/3/span 1;
+    */
+    /*
+    2. 원하는 item을 선택하여 순서를 지정할수있다. (순서를 지정하는 방법으로 위치가 지정됨)
+       위의 위치지정이 이루어진 경우 order은 먹지 않음.
+       기본값은 0이다.
+    */
+    order: -1;
+  }
+  .item {text-align: center; padding-top: calc(50% - 16px);}
+  .item1 {background-color: red;}
+  .item2 {background-color: orange;}
+  .item3 {background-color: yellow;}
+  .item4 {background-color: lightGreen;}
+  .item5 {background-color: green;}
+  .item6 {background-color: lightBlue;}
+  .item7 {background-color: blue;}
+  .item8 {background-color: darkBlue;}
+  .item9 {background-color: purple;}
+  .item10 {background-color: #300063;}
+  .item11 {background-color: black;}
+  .item12 {background-color: pink;}
+  /*
+  */
+</style>
+</html>
