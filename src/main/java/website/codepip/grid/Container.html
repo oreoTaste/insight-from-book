@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Grid Practice - 2. Container</title>
+</head>
+<body>
+  <div class="container">
+    <div class="item item1">#1</div>
+    <div class="item item2">#2</div>
+    <div class="item item3">#3</div>
+    <div class="item item4">#4</div>
+    <div class="item item5">#5</div>
+    <div class="item item6">#6</div>
+    <div class="item item7">#7</div>
+    <div class="item item8">#8</div>
+    <div class="item item9">#9</div>
+    <div class="item item10">#10</div>
+    <div class="item item11">#11</div>
+    <div class="item item12">#12</div>
+  </div>
+</body>
+
+<style>
+  body {margin: 0; background-color: white;}
+  .container {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: grid;
+    /*
+    1. grid의 전체적인 구간을 나눌때, 
+       행의 개수를 쪼개기위해 grid-template-rows를
+       열의 개수를 쪼개기위해 grid-template-column를 사용한다.
+       이때, 1fr은 비율을 산정하는 방법이다 (20% 이런식으로 직접 지정도 가능, 그외에도 3em, 100px 이런식으로도 가능)
+    */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /*
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr 1fr ;
+    */
+    background-color: gray;
+  }
+  .item12 {
+    border: 5px dashed black;
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    /*
+    order: -1;
+    */
+  }
+  .item {text-align: center; padding-top: calc(50% - 16px);}
+  .item1 {background-color: red;}
+  .item2 {background-color: orange;}
+  .item3 {background-color: yellow;}
+  .item4 {background-color: lightGreen;}
+  .item5 {background-color: green;}
+  .item6 {background-color: lightBlue;}
+  .item7 {background-color: blue;}
+  .item8 {background-color: darkBlue;}
+  .item9 {background-color: purple;}
+  .item10 {background-color: #300063;}
+  .item11 {background-color: black;}
+  .item12 {background-color: pink;}
+  /*
+  */
+</style>
+</html>
