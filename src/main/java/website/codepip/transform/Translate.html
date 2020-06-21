@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Transform Practice - 1. Translate</title>
+</head>
+<body>
+  <div class="item item1"></div>
+</body>
+
+<style>
+  .item {
+    width: 300px; /*너비*/
+    height: 300px; /*높이*/
+    border-radius: 150px; /*모서리 곡선(원으로 설정)*/
+    background-color: pink; /*배경색*/
+    /*
+    1. 위치를 이동할때,
+    X축으로 이동 : translateX(100px),
+    y축으로 이동 : translateY(50px), 으로 사용할 수 있으며
+       이를 통합해서 translate(100px, 50px)로도 사용가능하다.
+       추가적으로, 앞뒤로 이동하는 것 역시 가능한데, 이는 translateZ(150px) 또는 
+    translate3d(100px, 50px, 150px) 이렇게 사용할 수 있다.
+    */
+    transform: translate(100px, 0px); /*우측으로 150px 하단으로 10px 이동*/
+    /*
+    transform: translateX(100px) translateY(0);
+    transform: translateZ(50px);
+    */
+    transition:width 1s, height 1s, background-color 1s, transform 1s; /*transition은 추후 예정*/
+    -webkit-transition:width 1s, height 1s, background-color 1s, -webkit-transform 1s;
+  }
+  
+  .item:hover {
+    width: 300px; /*너비*/
+    height: 300px; /*높이*/
+    border-radius: 150px; /*모서리 곡선(원으로 설정)*/
+    background-color: red; /*배경색*/
+    transform: translate(0, 0);
+  }
+</style>
+</html>
