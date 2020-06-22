@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Transform Practice - 3. Scale</title>
+</head>
+<body>
+  <div class="item item1">ABC</div>
+</body>
+
+<style>
+  .item {
+    text-align: center;
+    line-height: 300px;
+    font-size: 3rem;
+  }
+  .item {
+    width: 300px; /*너비*/
+    height: 300px; /*높이*/ 
+    border-radius: 100px; /*모서리 곡선(원으로 설정)*/
+    background-color: pink; /*배경색*/
+    border-bottom: 10px dashed black;
+    /*
+    1. 도형을 늘릴때
+       가로를 늘릴 때 : scaleX(2) 또는 scale(2, 1) 또는 scale3d(2,1,1)
+       세로를 늘릴 때 : scaleY(2) scale(1, 2) 또는 scale3d(1,2,1)
+    3d에서 z축 방향으로 늘릴 때 : scale3d(1,1,2);
+    */
+    transform: translate(50vh, 50vh) scale(5, 0.5); /*좌우 5배, 위아래 0.5배로 늘린다*/
+    transition:border-radius 1s, width 1s, height 1s, background-color 1s, transform 1s; /*transition은 추후 예정*/
+    -webkit-transition:border-radius 1s, width 1s, height 1s, background-color 1s, -webkit-transform 1s;
+  }
+  
+  .item:hover {
+    width: 300px; /*너비*/
+    height: 300px; /*높이*/
+    border-radius: 0px; /*모서리 곡선(원으로 설정)*/
+    background-color: red; /*배경색*/
+    transform: translate(50vh, 50vh) scale(1, 1); /*우측으로 150px 하단으로 10px 이동*/
+  }
+</style>
+</html>
