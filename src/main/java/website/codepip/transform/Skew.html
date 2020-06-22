@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Transform Practice - 4. Skew</title>
+</head>
+<body>
+  <div class="item item1">ABC</div>
+</body>
+
+<style>
+  .item {
+    text-align: center;
+    line-height: 300px;
+    font-size: 3rem;
+  }
+  .item {
+    width: 300px; /*너비*/
+    height: 300px; /*높이*/ 
+    border-radius: 100px; /*모서리 곡선(원으로 설정)*/
+    background-color: pink; /*배경색*/
+    border-bottom: 10px dashed black;
+    /*
+    1. 도형 비틀기
+       좌측상단 + 우측하단을 늘릴 때 : skewX(20deg)
+       상단좌측 + 하단우측을 늘릴 때 : skewY(30deg)
+       또는 이를 통합해서 skew(20deg, 30deg)
+    */
+    transform: translate(50vh, 50vh) skew(30deg, 30deg); /*좌우 5배, 위아래 0.5배로 늘린다*/
+    transition:border-radius 1s, width 1s, height 1s, background-color 1s, transform 1s; /*transition은 추후 예정*/
+    -webkit-transition:border-radius 1s, width 1s, height 1s, background-color 1s, -webkit-transform 1s;
+  }
+  
+  .item:hover {
+    width: 300px; /*너비*/
+    height: 300px; /*높이*/
+    border-radius: 0px; /*모서리 곡선(원으로 설정)*/
+    background-color: red; /*배경색*/
+    transform: translate(50vh, 50vh) skew(-30deg, -30deg); /*우측으로 150px 하단으로 10px 이동*/
+  }
+</style>
+</html>
