@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Transform Practice - 5. Others</title>
+</head>
+<body>
+  <div class="item item1">ABC</div>
+</body>
+
+<style>
+  .item {
+    text-align: center;
+    line-height: 300px;
+    font-size: 3rem;
+  }
+
+  @keyframes slidein {
+	  from {
+	    transform: translate(0vh, 0vh) skew(30deg, 30deg);
+	  }
+	  33.3% {
+	    transform: translate(25vh, 50vh) skew(-30deg, -30deg);
+	  }
+	  66.6% {
+	    transform: translate(100vh, 50vh) skew(30deg, 30deg);
+	  }
+    to {
+      transform: translate(0vh, 0vh) skew(30deg, 30deg);
+    }
+  }
+
+  /*
+  2. 애니메이션 설정
+  2-1. 방향성 정하기
+  animation-direction : normal  | reverse | alternate | alternate-reverse;
+  -> normal : 순차재생
+  -> reverse : 역재생
+  -> alternate : [순차재생 + 역재생] 한세트
+  -> alternate-reverse : [역재생+순차재생] 한세트
+  
+  2-2. 이름 정하기
+  animation-name : 이름 (여기에서는 slidein으로 이름 지정)
+  
+  2-3. 초기 대기시간 정하기 (몇초후에 재생할지를 정함)
+  animation-delay : 1s;
+  
+  2-4. 재생시간 정하기 (몇초동안 재생할지를 정함)
+  animation-duration : 1s;
+  
+  2-5. 재생회수 정하기 (몇번 정할지)
+  animation-iteration-count : 0 | 1 | 2 | ... | infinite;
+  
+  2-6. 애니메이션 종료후 상태 정하기
+  animation-fill-mode : none | forwards | backwards | both .. 
+  -> forwards : 재생후 마지막 화면으로 멈춤
+  -> backwards : 재생후 첫화면으로 멈춤
+  -> none : 재생후 화면에 대한 설정안함
+  -> both : 재생후 첫/마지막 화면을 모두 고려하여 양방향으로 설정
+  
+  2-7. 애니메이션 재생/일시정지 모드
+  animation-play-stateReset : paused | running;
+  -> paused : 일시정지 (JS를 통해서 일시정지 속성을 활용할 수 있을 것같다)
+  -> running : 정상재생
+  
+  2-8. 애니메이션 재생 순서
+  animation-timing-function : linear | ease-in-out | steps(5, end) | cubic-bezier(0.1, -0.5, 0.2, 0);
+  -> linear : 선형 (일정한 속도로 애니메이션이 재생)
+  -> ease-in : tan곡선으로(느리다가 빨른 속도로) 애니메이션 재생
+  -> ease-out : sin곡선으로 (빠르다가 느린속도로) 애니메이션 재생
+  -> cubic(x1, y1, x2, y2) : 베지어곡선으로 애니메이션 재생
+     (자세한 사항은 cubic-bezier.com에서 확인 후 설정가능)
+  -> ease-in-out으로도 설정가능 (ease-in로 재생하다가 ease-out로 재생)
+  
+  3. 이를 모두 축약해서 animation 안에 모두 사용가능
+  */
+  .item {
+    width: 300px; /*너비*/
+    height: 300px; /*높이*/ 
+    border-radius: 100px; /*모서리 곡선(원으로 설정)*/
+    background-color: pink; /*배경색*/
+    border-bottom: 10px dashed black;
+    animation: 1s linear 1s infinite running slidein;
+  }
+  
+</style>
+</html>
