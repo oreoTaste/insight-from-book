@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Transform Practice - 5. Others</title>
+</head>
+<body>
+   <div class="title">
+	  <h1>title (rtl)</h1>
+	  <span>span (bidi-override)</span>
+  </div>
+  <div class="item item1">ABC</div>
+  <div class="item item1">ABC</div>
+  <div class="item item1">ABC</div>
+  <div class="item item1">ABC</div>
+  <div class="item item1">ABC</div>
+</body>
+
+<style>
+  .item {
+    text-align: center;
+    line-height: 300px;
+    font-size: 3rem;
+  }
+  
+    /*
+    -- intro --
+    1. calc
+    2. direction
+    3. unicode-bidi
+    4. border-color
+    5. opacity
+    6. filter: grayscale
+    7. selector1 (상태)
+    8. selector2 (위치)
+    9. counter-increment
+    10. counter()
+    -- -- -- --
+    */
+  .title {
+    position: absolute;
+    /*
+    1. calc(수식)
+    */
+    left: calc( (100% - 20rem)/2 );
+    background: lightskyblue;
+    width: 20rem;
+  }
+  h1 {
+    /*
+    2. direction : 좌측정렬/우측정렬
+    ltr : 좌측에서 우측으로
+    rtl : 우측에서 좌측으로
+    */
+    direction: rtl;
+    display: block;
+  }
+  span {
+    /*
+    3. unicode-bidi : 글자의 방향 속성을 결정
+    -> normal : 방향을 기본값으로 설정
+    -> bidi-override : 방향을 direction 값으로 설정
+    */
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    display: block;
+  }
+  .item {
+    height: 300px;
+    width: calc(10vh + 100px + 10% + 1em);
+    border-radius: 100px;
+    background-color: pink;
+    border: 10px solid black;
+    /*
+    4. border-color: 테두리 색상 (방향에 따라 설정가능)
+    border-color : 12시방향색상 | 3시방향 | 6시방향 | 9시방향;
+    
+    5. opacity : 투명도
+    opacity : 0.1; 
+    -> 10%만 보임(90% 투명화)
+    
+    6. filter : grayscale(흑백비율);
+    filter: grayscale(100%);
+    100%를 모두 흑백화로 설정
+    */
+    border-color: red orange transparent green;
+    border-bottom: 10px dashed black;
+    opacity:0.8;
+    filter: grayscale(50%);
+  }
+	  /*
+	  7. 셀렉터1: hover | focus | visited | active | nth-child(숫자) | checked 등 상태정보
+	  hover : 마우스가 대상의 위에 있을경우
+	  visited : 방문한 하이퍼텍스트인 경우
+	  active : (클릭 등) 활성화되었을때
+	  nth-child(숫자) : '숫자'번째의 자식엘리먼트인 경우
+	  checked : ()체크박스 등) 체크된 경우
+	  */
+  .item:hover {
+    background-color: red;
+  }
+  .item::after {
+	  /*
+	  8. 셀렉터2:위치 {
+	    content : "들어갈 내용";
+	  -> 위치 : before | after | selection
+	  -> 첫 내용으로 들어갈지 끝내용으로 들어갈지 우선 선택
+	  }
+	  */
+	  
+	  content: '¶';
+	  font-size: 2rem;
+  }
+  .item::before {
+    content: 'will be replaced below';
+  }
+  .item::selection {
+    background-color: black;
+  }
+	  /*
+	  9. counter-increment : 임의의변수명
+	  -> 초기설정 : counter-reset을 항상 초기에 해두어야한다고 한다.
+	  -> 설명 : 객체순서에 따라 counter-increment에 [임의의변수명]을 넣으면 
+	        각 객체의 [임의의변수]에 auto-increment된 숫자가 들어간다.
+	  */
+  .item {
+    counter-reset : auto;
+    counter-increment: mycount;
+  }
+	  /*
+	  10. counter(변수명)
+	  -> 설명 : 9에서 설정한 임으의변수가 있다면 counter()를 통해 꺼내서 사용할 수 있다.
+	  */
+  .item::before {
+    content: counter(mycount) '. ';
+  }
+  </style>
+</html>
