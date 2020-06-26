@@ -28,4 +28,91 @@
 
 
 
-​	
+# 2. CodePip
+
+## 1. flexbox
+ - container
+	* display : flex;
+	* flex-direction : row | row-reverse | column | column-reverse
+	* flex-wrap : wrap | nowrap | ..
+	* flex-flow = flex-direction + flex-wrap
+	* justify-content : flex-start | flex-end | space-around | space-between | center ..
+	* align-items : flex-start | flex-end | center;
+	* align-content : flex-start | flex-end | center;
+ - item
+ 	* order : 0 (default: 0)
+ 	* align-self : flex-start | flex-end | center;
+ 	* flex-shrink : 1 | 2 ..
+ 	* flex-grow : 1 | 2 ..
+ 
+## 2. grid
+ - container
+	* grid-template-columns : 1fr 1fr 1fr 1fr;
+	* grid-template-rows : 1fr 1fr;
+	* grid-template : grid-template-columns + grid-template-rows
+	* order : 0 (default: 0)
+ - item
+ 	* grid-column-start : 2;
+ 	* grid-column-end : span 3;
+ 	* grid-column : grid-column-start + grid-column-end
+ 	* grid-row-start : 3;
+ 	* grid-row-end : 2;
+ 	* grid-row : grid-row-start + grid-row-end
+ 	* grid-area : grid-column + grid-row
+ 	* order : 0 (defulat: 0);
+ 
+## 3. transform
+ - Rotate
+ 	* rotate(10deg), rotateZ(10deg) / rotate(-10deg), rotateZ(-10deg)
+ 	* rotateX(20deg) / rotateX(-20deg)
+ 	* rotateY(30deg) / rotateY(-30deg)
+ 	* rotate3d(0.1, 0.2, 0.3, angle) =
+ 	  rotateX(angle * 0.1) rotateY(angle * 0.2) rotateZ(angle * 0.3)
+  - Scale
+	* scaleX(1.2)
+	* scaleY(1.5
+	* scale(1.2, 1.5)
+	* scale3d(1.2, 1.5, 1)
+ - Skew
+ 	* skewX(20deg)
+ 	* skewY(30deg)
+ 	* skew(20deg, 30deg)
+ - Translate
+	* translateX(100px);
+	* translateY(50px);
+	* translate(100px, 50px);
+	* translateZ(200px);
+	* translate3d(100px, 50px, 200px);
+
+## 4. others
+ - Animation
+ 	* @keyframes myanimation {
+ 		from {	// initial condition	}
+ 		50% {	// conditions after 50% of running time	}
+ 		to {	// terminal condition	}
+ 	  }
+	* animation-direction : normal  | reverse | alternate | alternate-reverse;
+	* animation-name : myanimation (normally slidein or etc);
+	* animation-delay : 1s;
+	* animation-duration : 3s;
+	* animation-iteration-count : 0 | 1 | 2 | ... | infinite;
+	* animation-fill-mode : none | forwards | backwards | both .. 
+	* animation-play-stateReset : paused | running;
+	* animation-timing-function : linear | ease-in-out | steps(5, end) | cubic-bezier(0.1, -0.5, 0.2, 0);
+	* animation : abbr. for all above
+ - Others
+	* calc(1em + 10% + 50px);
+	* direction : rtl;
+	* unicode-bidi : bidi-override;
+	* border-color : red yellow blue purple;
+	* opacity : 0.5;
+	* filter: grayscale(100%);
+	* selector: hover | focus | visited | active | nth-child | checked ...
+	* selector:: before | after | selection ...
+	* counter-increment : mycount;
+	* content : counter(mycount);
+
+
+
+
+
