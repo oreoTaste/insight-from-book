@@ -1,11 +1,13 @@
 # insight-from-book
-### Summary : to get insight from book/website and improve <br>
-### Link :
+### Purpose : to get insight from book/website and improve <br>
+### Summary :
 - [book] [1. 문제로 풀어보는 알고리즘](user-content-1-문제로-풀어보는-알고리즘)<br>
 	- learning algorithm
 - [website] [2. CodePip](user-content-2-CodePip)<br>
 	- learning HTML/CSS/JS
 <br>
+
+### Details :
 <br>
 <details>
 	<summary><strong>1. 문제로 풀어보는 알고리즘</strong></summary>
