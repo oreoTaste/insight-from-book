@@ -8,7 +8,6 @@
 <br>
 
 ### Details :
-<br>
 <details>
 	<summary><strong>1. 문제로 풀어보는 알고리즘</strong></summary>
 	<div markdown="1">
