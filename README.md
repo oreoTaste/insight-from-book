@@ -1,9 +1,10 @@
 # insight-from-book
 * 개요 : 책 요약하고 코드정리하기<br>
-[1. 문제로 풀어보는 알고리즘](#1_문제로-풀어보는-알고리즘)<br>
-[2. CodePip](#2_codepip)<br>
 
-## 1_문제로 풀어보는 알고리즘
+<details>
+	<summary>1. 문제로 풀어보는 알고리즘</summary>
+	<div markdown="1">
+		<h2> 1. 문제로 풀어보는 알고리즘 </h2>
 
 ### Chapter 0.1 최대와 최소
  - code 0-1)) 최대 / 최소값을 구하는 함수 작성하기
@@ -27,9 +28,15 @@
 
 ### Chapter 0.5 연결리스트 (LinkedList)
  - code 0-11)) 연결리스트로 큐 작성하기
+	</div>
+</details>
+	
 
+<details>
+	<summary>2. CodePip</summary>
+	<div markdown="1">
+		<h2> 2. CodePip </h2>
 
-## 2_CodePip
 ### 1. flexbox
  - container
 	* display : flex;
@@ -111,7 +118,8 @@
 	* selector:: before | after | selection ...
 	* counter-increment : mycount;
 	* content : counter(mycount);
-
+	</div>
+</details>
 
 
 
