@@ -35,6 +35,7 @@
 
 ### Chapter 0.5 연결리스트 (LinkedList)
  - code 0-11)) 연결리스트로 큐 작성하기
+ 	<hr>
 	</div>
 </details>
 	
@@ -125,6 +126,7 @@
 	* selector:: before | after | selection ...
 	* counter-increment : mycount;
 	* content : counter(mycount);
+	<hr/>
 	</div>
 </details>
 
