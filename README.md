@@ -1,8 +1,14 @@
 # insight-from-book
-* 개요 : 책 요약하고 코드정리하기<br>
-
+### Summary : to get insight from book/website and improve <br>
+### Link :
+- [book] [1. 문제로 풀어보는 알고리즘](user-content-1-문제로-풀어보는-알고리즘)<br>
+	- learning algorithm
+- [website] [2. CodePip](user-content-2-CodePip)<br>
+	- learning HTML/CSS/JS
+<br>
+<br>
 <details>
-	<summary>1. 문제로 풀어보는 알고리즘</summary>
+	<summary><strong>1. 문제로 풀어보는 알고리즘</strong></summary>
 	<div markdown="1">
 		<h2> 1. 문제로 풀어보는 알고리즘 </h2>
 
@@ -33,7 +39,7 @@
 	
 
 <details>
-	<summary>2. CodePip</summary>
+	<summary><strong>2. CodePip</strong></summary>
 	<div markdown="1">
 		<h2> 2. CodePip </h2>
 
