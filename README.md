@@ -27,6 +27,8 @@
  - code 0-8)) right_rotate 함수 : 오른쪽으로 이동
  - code 0-8확장)) left_rotate 함수 : 왼쪽으로 이동
  - code 0-8확장)) right_rotate 함수 : k만큼 오른쪽으로 이동하는 함수와 빠르게 개량버전
+ - extra)) SimpleRight : 오른쪽으로 n만큼 이동 연습
+ - extra)) SimpleLeft : 왼쪽으로 n만큼 이동 연습
 
 ### Chapter 0.4 은행 대기번호 관리 (Queue)
  - code 0-9)) 배열로 큐 작성하기

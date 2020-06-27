@@ -9,16 +9,18 @@ public class Code00_08_02 {
     print(arr);
 
     System.out.println("\n========================");
-    System.out.println("[repeat model]");
+    System.out.println("[recursive right_rotate model]");
     long startTime1 = checkTime();
+    // recursive right rotate 모델일때
     right_rotate(arr, 0, 5, 1000000000);
     long endTime1 = checkTime();
     print(arr, startTime1, endTime1);
 
 
     System.out.println("\n========================");
-    System.out.println("[repeat model]");
+    System.out.println("[speedy right_rotate model]");
     long startTime2 = checkTime();
+    // speedy right rotate 모델일때
     speedy_right_rotate(arr, 0, 5, 1000000000);
     long endTime2 = checkTime();
     print(arr, startTime2, endTime2);
