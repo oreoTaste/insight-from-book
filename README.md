@@ -5,7 +5,7 @@
 	- learning algorithm
 - [website] [2. CodePip](#-2-codepip-)<br>
 	- learning HTML/CSS/JS
-- [website] [3. FlexBoxDefense](#-3-flexboxdefense-)<br>
+- [website] [3. FlexBoxDefense](#-3-flexbox-defense-)<br>
   - learning CSS : flexbox
 <br>
 
@@ -141,8 +141,7 @@
   <div markdown="1">
     <h2> 3. Flexbox Defense </h2>
 
-### 1. flexbox
- - answer
+### Answer
     1.
     .tower-group-1 {display: flex; justify-content: center;}
     
