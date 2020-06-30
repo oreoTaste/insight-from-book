@@ -34,6 +34,8 @@
  - code 0-9)) 배열로 큐 작성하기
  - code 0-9확장)) 배열 늘려서 무한정 큐 사용하기
  - code 0-10)) 원형 큐 작성하기 (Circle Queue) : 0-9의 단점(빈배열) 개선
+ - extra)) QueueFromArray : 배열을 통해 Queue 구현하기 연습
+ - extra)) StackFromArray : 배열을 통해 Stack 구현하기 연습
 
 ### Chapter 0.5 연결리스트 (LinkedList)
  - code 0-11)) 연결리스트로 큐 작성하기
