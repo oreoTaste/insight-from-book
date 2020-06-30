@@ -1,4 +1,6 @@
 /*
+source : http://www.flexboxdefense.com/
+
 regarding 'flex'
 - justify-content
 - flex-direction
