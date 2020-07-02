@@ -42,7 +42,10 @@
  - extra)) StackFromArray : 배열을 통해 Stack 구현하기 연습
 
 ### Chapter 0.5 연결리스트 (LinkedList)
- - code 0-11)) 연결리스트로 큐 작성하기
+ - code 0-11 ~ 0-12)) 연결리스트로 큐 작성하기
+ - code0-11 ~ 12확장1)) 최대 수용할 수 있는 대기번호는?
+ - code0-11 ~ 12확장2)) 최대 수용할 수 있는 대기번호는?
+ - extra)) MyLinkedListTest : 사용자 클래스를 통해 LinkedList 구현하기 연습
  	<hr>
 	</div>
 </details>
