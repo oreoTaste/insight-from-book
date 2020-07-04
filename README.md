@@ -46,6 +46,7 @@
  - code0-11 ~ 12확장1)) 최대 수용할 수 있는 대기번호는?
  - code0-11 ~ 12확장2)) 최대 수용할 수 있는 대기번호는?
  - extra)) MyLinkedListTest : 사용자 클래스를 통해 LinkedList 구현하기 연습(add, get, set, remove, indexOf)
+ - extra)) QueueFromList : 연결리스트를 통해 Queue 구현하기 연습
  	<hr>
 	</div>
 </details>
