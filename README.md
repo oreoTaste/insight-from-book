@@ -49,6 +49,20 @@
  - extra)) MyLinkedListTest : 사용자 클래스를 통해 LinkedList 구현하기 연습(add, get, set, remove, indexOf)
  - extra)) QueueFromList : 연결리스트를 통해 Queue 구현하기 연습
  - extra)) StackFromList : 연결리스트를 통해 Stack 구현하기 연습
+
+### Chapter 0.6 추가문제
+ - code0-a)) int형 배열 원소 모두 출력하기 (배열과 배열의 길이를 param으로 받는다)
+ - code0-b)) int형 배열의 모든 원소의 값이 k이면1, 아니면 0을 반환하는 all_is 함수 작성하기
+ - code0-c)) int형 정수를 이진수로 변환하여 1의 개수를 세는 프로그램 작성하기
+ - code0-d)) 연결리스틀르 이용하여 스택 자료구조 구현하기
+ - code0-e)) 스택 두개를 이용해 큐를 만드는 방법 구현하기 (enqueue, dequeue 구현하기)
+ - code0-f)) 코드 실행결과 예측하기
+ - code0-g)) 10진수 정수를 이진수로 바꾸어 출력하는 프로그램 작성하기
+ - code0-h)) 길이가 n개 정수배열 a와 p에 대해 0 <= i <= p <= j < n이면서, 
+             a[i]~a[j]의 합을 최대로 하는 i,j를 구하는 프로그램 작성하기
+ - code0-i)) 인덱스가 0부터 세는 것과 1부터 세는것의 장점 생각하기
+ - code0-j)) C,C+,C#,Java등 프로그램 언어마다 클래스와 구조체 지원여부가 다르다. 이에 대해 알아보기
+
  	<hr>
 	</div>
 </details>
