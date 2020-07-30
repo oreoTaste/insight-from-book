@@ -1,6 +1,6 @@
-package bookname.algorithm.solvingQuiz.ch01_01;
+package bookname.algorithm.solvingQuiz.ch01_04;
 
-public class Code01_09_01수정 {
+public class Code01_09_02수정 {
   static double[] memory;
   static long startDate;
   static final long days = 20;
@@ -35,8 +35,8 @@ public class Code01_09_01수정 {
     if(param == 2)
       return 1;
     if(param == 3)
-      return (double)7/8;
-    return countBinaryNum1(param-1)/2 + countBinaryNum1(param-2)/4 + countBinaryNum1(param-3)/8;
+      return (double)19/27;
+    return countBinaryNum1(param-1)/3 + 2*countBinaryNum1(param-2)/9 + 4*countBinaryNum1(param-3)/27;
   }
 
   // using recursive function
@@ -46,11 +46,11 @@ public class Code01_09_01수정 {
     if(param == 2)
       return memory[2] = 1;
     if(param == 3)
-      return memory[3] = (double)7/8;
+      return memory[3] = (double)19/27;
     if(memory[(int) param] != 0)
       return memory[(int) param];
 
-    return memory[(int) param] = countBinaryNum1(param-1)/2 + countBinaryNum1(param-2)/4 + countBinaryNum1(param-3)/8;
+    return memory[(int) param] = countBinaryNum1(param-1)/3 + 2*countBinaryNum1(param-2)/9 + 4*countBinaryNum1(param-3)/27;
   }
 
   // using for loop
@@ -60,14 +60,14 @@ public class Code01_09_01수정 {
     if(param == 2)
       return 1;
     if(param == 3)
-      return (double)7/8;
+      return (double)19/27;
 
     double prepreprev = 1;
     double preprev = 1;
-    double prev = (double)7/8;
+    double prev = (double)19/27;
     double result = 0;
     for(int i = 4; i <= param; i++) {
-      result = prev/2 + preprev/4 + prepreprev/8;
+      result = prev/3 + 2*preprev/9 + 4*prepreprev/27;
       prepreprev = preprev;
       preprev = prev;
       prev = result;

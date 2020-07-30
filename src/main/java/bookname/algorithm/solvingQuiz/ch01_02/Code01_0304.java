@@ -1,20 +1,20 @@
-package bookname.algorithm.solvingQuiz.ch01_01;
+package bookname.algorithm.solvingQuiz.ch01_02;
 
 import java.util.Scanner;
 
-public class Code01_05 {
+public class Code01_0304 {
   static Scanner scanner = new Scanner(System.in);
 
   public static void main(String[] args) {
-    LinkedList_05<Integer> list = new LinkedList_05<>();
+    LinkedList_0304<Integer> list = new LinkedList_0304<>();
 
     while(true) {
       System.out.print("input number : ");
       int input = Integer.valueOf(scanner.nextLine());
       if(input == 0) {
-        printIfNull(list.pop());
+        printIfNull(list.dequeue());
       } else if(input < 0) {
-        list.flush1();
+        list.flush2();
         break;
       } else {
         list.add(input);
@@ -38,11 +38,11 @@ public class Code01_05 {
 
 }
 
-class LinkedList_05 <E> {
+class LinkedList_0304 <E> {
   Node<E> first;
   Node<E> last;
   int size = 0;
-  int popSize = 0;
+  int dequeueSize = 0;
 
   public void add(E obj) {
     Node<E> newNode = new Node<>();
@@ -54,30 +54,29 @@ class LinkedList_05 <E> {
       last = newNode;
     }
     size++;
-    popSize++;
   }
 
   // flush using for loop
   public void flush1() {
-    for(int i = --popSize; i >= 0; i--) {
+    for(int i = dequeueSize; i < size; i++) {
       System.out.print(get(i) + " ");
     }
   }
 
   // flush using recursive function
   public void flush2() {
-    if(popSize > 0) {
-      System.out.print(get(--popSize) + " ");
+    if(dequeueSize < size) {
+      System.out.print(get(dequeueSize++) + " ");
       flush2();
     }
   }
 
-  public void push(E obj) {
+  public void enqueue(E obj) {
     add(obj);
   }
 
   public E get(int index) {
-    if(index < 0 || popSize > size) {
+    if(index < 0 || dequeueSize > size) {
       return null;
     }
 
@@ -92,8 +91,8 @@ class LinkedList_05 <E> {
     return cursor.data;
   }
 
-  public E pop() {
-    return get(--popSize);
+  public E dequeue() {
+    return get(dequeueSize++);
   }
 
   private class Node <T> {

@@ -1,4 +1,4 @@
-package bookname.algorithm.solvingQuiz.ch01_01;
+package bookname.algorithm.solvingQuiz.ch01_03;
 
 import java.util.Scanner;
 
