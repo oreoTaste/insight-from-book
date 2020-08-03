@@ -39,6 +39,7 @@ public class Code01_10 {
     System.out.println(">> 횟수 : " + count);
   }
 
+  // for반복문의 한계 : 원소가 6개인 경우에만 작동 가능
   private static void calculate_increase(Integer[] bills) {
     for(int i = 0; i <= money; i += bills[0]) {
       for(int j = 0; i+j <= money; j += bills[1]) {
