@@ -27,7 +27,7 @@ public class Code02_05 {
     System.out.println("계산중");
 
     long currentTime = System.currentTimeMillis();
-    System.out.print("최종 도착지까지 갈 수 있는 최단거리 경우의 수는 " + countPath(map, first, second) + "\n");
+    System.out.print("최종 도착지까지 갈 수 있는 최단거리 최대효용 : " + countPath(map, first, second) + "\n");
     System.out.println("경로는 다음과 같습니다.");
     showPath(from, from.length - 1, from[0].length - 1);
     System.out.println(String.format("-> %d밀리초가 소요되었습니다.", System.currentTimeMillis()-currentTime));
