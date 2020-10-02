@@ -1,6 +1,8 @@
 // 문제 설명
 // 직사각형 4개의 점 중 3개의 좌표가 배열 v로 주어질 때, 나머지 한 점의 좌표를 구하기
 
+// https://programmers.co.kr/learn/courses/18/lessons/1878
+
 package website.programmers;
 
 class Rectangle01 {

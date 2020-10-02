@@ -11,6 +11,8 @@
 //  4-4. u의 첫 번째와 마지막 문자를 제거하고, 나머지 문자열의 괄호 방향을 뒤집어서 뒤에 붙입니다.
 //  4-5. 생성된 문자열을 반환합니다.
 
+// https://programmers.co.kr/learn/courses/30/lessons/60058
+
 function parentheses01(p) {
   if (p == "") return "";
   if (checkValid(p)) return p;

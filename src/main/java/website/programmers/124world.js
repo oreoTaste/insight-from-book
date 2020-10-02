@@ -16,6 +16,8 @@
 10	41
 */
 
+// https://programmers.co.kr/learn/courses/30/lessons/12899
+
 function solution(n) {
   var result = "";
   while (n > 0) {
