@@ -5,6 +5,7 @@
 // 다리를 여러 번 건너더라도, 도달할 수만 있으면 통행 가능하다고 봅니다.
 // 예를 들어 A 섬과 B 섬 사이에 다리가 있고, B 섬과 C 섬 사이에 다리가 있으면 A 섬과 C 섬은 서로 통행 가능합니다.
 
+// findUnion 알고리즘
 function solution(n, costs) {
   var answer = 0;
   let cnt = 0;
