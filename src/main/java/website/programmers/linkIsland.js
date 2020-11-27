@@ -16,6 +16,7 @@ function solution(n, costs) {
   });
 
   box.sort((a, b) => a.cost - b.cost);
+
   const getParent = (num) => {
     if (num == parent[num]) return num;
     return (parent[num] = getParent(parent[num]));
