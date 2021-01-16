@@ -1,0 +1,32 @@
+<!--
+http://paullab.co.kr/codefestival.html
+1. 암호 해독하기
+'  + -- + - + -  '
+'  + --- + - +   '
+'  + -- + - + -  '
+'  + - + - + - + '
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        const string = [
+            '  + -- + - + -  ',
+            '  + --- + - +   ',
+            '  + -- + - + -  ',
+            '  + - + - + - + '
+        ]
+
+        let result = "";
+        for(str of string) {
+            result += String.fromCharCode(parseInt(str.replace(/ /g, '').replace(/\+/g, '1').replace(/-/g, '0'), 2));
+        }
+        console.log(result);
+    </script>
+    
+</body>
+</html>
