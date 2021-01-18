@@ -45,5 +45,5 @@
 //   ],
 // ];
 
-function solution(cross) {}
-solution(cross);
+// function solution(cross) {}
+// solution(cross);
