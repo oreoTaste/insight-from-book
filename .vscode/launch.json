@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch tree",
+            "request": "launch",
+            "mainClass": "website.oneDayBeforeTest.basic.tree",
+            "projectName": "bookname.algorithm.solvingQuiz"
+        }
+    ]
+}
