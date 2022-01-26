@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const BASE = 2;
+      const POW = 100;
+      let answer = String(Math.pow(BASE, POW) % 100)[0];
+      console.log(`십의 자리수 : ${answer}`);
+
+      //      let rslt = 1;
+      //      for (let i = 0; i < 100; i++) {
+      //        rslt *= 2;
+      //        if (rslt > 100) {
+      //          rslt = rslt % 100;
+      //        }
+      //        str_rslt = String(rslt);
+      //        console.log(i, "-->", str_rslt.slice(str_rslt.length - 2, str_rslt.length));
+      //            }
+    </script>
+  </body>
+</html>

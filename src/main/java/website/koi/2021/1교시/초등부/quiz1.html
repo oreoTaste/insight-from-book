@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const A = 4;
+      const B = 2;
+      const getA1 = (input1, input2) => input1 + input2;
+      const getA2 = (input1, input2) => input1 - input2;
+      const getB1 = (input1, input2) => input1 * input2;
+      const getB2 = (input1, input2) => parseInt(input1 / input2);
+      const getB3 = (input1, input2) => input1 % input2;
+
+      let first_answer = [];
+      first_answer.push(getA1(A, B));
+      first_answer.push(getA2(A, B));
+
+      let second_answer = [];
+      second_answer.push(getB1(A, B));
+      second_answer.push(getB2(A, B));
+      second_answer.push(getB3(A, B));
+
+      console.log(first_answer.length * second_answer.length);
+    </script>
+  </body>
+</html>

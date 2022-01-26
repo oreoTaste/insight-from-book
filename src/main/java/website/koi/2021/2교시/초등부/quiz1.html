@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let n = 100;
+      const operation = (arr) => {
+        return arr.filter((el, ind) => (ind % 2 == 0 ? false : true));
+      };
+      const infiniteOperation = (arr) => {
+        if (arr.length == 1) {
+          return arr;
+        }
+        return infiniteOperation(operation(arr));
+      };
+      const quickOperationwArr = (arr) => {
+        const maxVal = arr[arr.length - 1];
+        let key = 0;
+        for (let i = 0; i < Number.MAX_SAFE_INTEGER; i++) {
+          if (maxVal < Math.pow(2, i)) {
+            key = --i;
+            break;
+          }
+        }
+        return Math.pow(2, key);
+      };
+      const quickOperationwNum = (maxVal) => {
+        let key = 0;
+        for (let i = 0; i < Number.MAX_SAFE_INTEGER; i++) {
+          if (maxVal < Math.pow(2, i)) {
+            key = --i;
+            break;
+          }
+        }
+        return Math.pow(2, key);
+      };
+
+      let start = new Date().getTime();
+      let ls = Array.from(Array(n), (val, ind) => ind + 1);
+
+      let start2 = new Date().getTime();
+      console.log(`${start2 - start}ms : ${ls}`);
+
+      let start3 = new Date().getTime();
+      console.log(`${start3 - start2}ms : ${infiniteOperation(ls)}`);
+
+      let start4 = new Date().getTime();
+      console.log(`${start4 - start3}ms : ${quickOperationwArr(ls)}`);
+
+      let start5 = new Date().getTime();
+      console.log(`${start5 - start4}ms : ${quickOperationwNum(n)}`);
+    </script>
+  </body>
+</html>

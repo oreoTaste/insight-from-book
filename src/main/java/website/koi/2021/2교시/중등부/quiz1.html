@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arr = [9, 9, 4, 1, 4, 9, 9];
+      //      const honeyIdx = 3;
+      //      let honeyIndex = honeyIdx - 1;
+      // 꿀따는 함수 생성
+      const gatherHoney = (array, honeyInd, idx1, idx2) => {
+        let arrCopy = array.slice(0, array.length);
+        arrCopy[idx1] = 0;
+        arrCopy[idx2] = 0;
+        let sum = 0;
+        sum += arrCopy.slice(Math.min(honeyInd, idx1), Math.max(honeyInd, idx1) + 1).reduce((prev, cur) => prev + cur);
+        sum += arrCopy.slice(Math.min(honeyInd, idx2), Math.max(honeyInd, idx2) + 1).reduce((prev, cur) => prev + cur);
+        return sum;
+      };
+      const manageHoney = (arr, honeyInd) => {
+        let answer = [];
+        // 벌이 왼쪽끝, 오른쪽끝, 양쪽끝 세가지 경우에 있을 경우 그중 하나에 최대값이 있을 것이라고 추측
+        //양쪽끝에 있는 경우
+        answer.push(gatherHoney(arr, honeyInd, 0, arr.length - 1));
+
+        //왼쪽끝에 있는 경우
+        let max = { index: 1, cnt: arr[1] };
+        for (let i = 2; i <= honeyInd; i++) {
+          if (max["cnt"] < arr[i]) continue;
+          if (max["cnt"] - arr.slice(max["index"] + 1, i + 1).reduce((prev, arr) => prev + arr) - arr[i] > 0) {
+            max["index"] = i;
+            max["cnt"] = arr[i];
+          }
+        }
+        answer.push(gatherHoney(arr, honeyInd, 0, max["index"]));
+
+        //오른쪽끝에 있는 경우
+        max = { index: arr.length - 2, cnt: arr[arr.length - 2] };
+        for (let i = arr.length - 3; i >= honeyInd; i--) {
+          if (max["cnt"] < arr[i]) continue;
+          if (max["cnt"] - arr.slice(i, max["index"]).reduce((prev, arr) => prev + arr) - arr[i] > 0) {
+            max["index"] = i;
+            max["cnt"] = arr[i];
+          }
+        }
+        answer.push(gatherHoney(arr, honeyInd, max["index"], arr.length - 1));
+        return answer.reduce((prev, cur) => (prev < cur ? cur : prev), 0);
+      };
+      const autoHoneyIndex = (arr) => {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          let tmp = manageHoney(arr, i);
+          if (sum < tmp) sum = tmp;
+        }
+        return sum;
+      };
+      console.log(autoHoneyIndex(arr));
+    </script>
+  </body>
+</html>

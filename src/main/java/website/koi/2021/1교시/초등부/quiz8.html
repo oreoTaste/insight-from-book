@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const factorial = (n) => {
+        if (n == 0 || n == 1) return 1;
+        else if (n == 2) return 2;
+        else return n * factorial(n - 1);
+      };
+      // abcdef
+      // abcdfe
+      // abcedf
+      // abcefd
+      // ...
+      // a : 5!개
+      // b : 5!개
+      // c :
+      let letter = "ABCDEF";
+      const QUIZ = "CBADEF";
+      let total = 1;
+      for (let i = 0; i < QUIZ.length; i++) {
+        for (let j = 0; j < letter.length; j++) {
+          if (QUIZ[i] == letter[j]) {
+            total += j * factorial(QUIZ.length - (i + 1));
+            letter = letter.substring(0, j) + letter.substring(j + 1, QUIZ.length);
+            console.log(total, letter);
+            break;
+          }
+        }
+      }
+      console.log(total + "번째");
+    </script>
+  </body>
+</html>
