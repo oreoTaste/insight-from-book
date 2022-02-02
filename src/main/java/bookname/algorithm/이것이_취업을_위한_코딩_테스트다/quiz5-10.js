@@ -65,7 +65,7 @@ function dfs(ice, x, y, visited) {
         }
     }
     // dfs
-    while(i = stack.shift()) {
+    while(i = stack.pop()) {
         let [ix, iy] = i
         if(ix >= 0 && iy >= 0 && ix < n && iy < m && visited[ix][iy] == 0) {
             dfs(ice, ix, iy, visited)
