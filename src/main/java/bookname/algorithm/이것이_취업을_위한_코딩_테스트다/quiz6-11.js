@@ -1,6 +1,7 @@
 const n = 2
 const INPUT = '홍길동 95 이순신 77'.split(' ')
 // 성적이 낮은 순서로 학생 출력하기
+// 정렬
 
 console.log(INPUT)
 let input = []
