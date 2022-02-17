@@ -1,3 +1,4 @@
+// 개선된 다익스트라 (Priority Queue or Heap)
 class Stack {
     #array = []
     #start = 0
