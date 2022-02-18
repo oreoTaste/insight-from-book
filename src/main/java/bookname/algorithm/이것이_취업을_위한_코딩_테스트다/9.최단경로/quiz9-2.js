@@ -60,9 +60,9 @@ class PriorityQueue {
         if(this.#array[mid].priority == priority) {
             return mid
         } else if(this.#array[mid].priority > priority) {
-            return this.binarySearch(mid+1, end, priority)
-        } else {
             return this.binarySearch(start, mid, priority)
+        } else {
+            return this.binarySearch(mid+1, end, priority)
         }
     }
     peek() {
@@ -93,15 +93,44 @@ class PriorityQueue {
         return this.#array
     }
 }
-let pq = new PriorityQueue()
-let time = 100
-while(time-- > 0) {
-    pq.offer(parseInt(Math.random() * 100), parseInt(Math.random() * 100))
+
+// 개선된 다익스트라
+const [node, path] = '6 11'.split(' ').map(el => parseInt(el))
+const start = 1
+const GRAPH = '1 2 2 1 3 5 1 4 1 2 3 3 2 4 2 3 2 3 3 6 5 4 3 3 4 5 1 5 3 1 5 6 2'.split(' ').map(el => parseInt(el))
+
+let graph = new Map()
+for(let i = 0; i < path; i++) {
+    let [begin, end, dist] = GRAPH.slice(3 * i, 3 * (i+1))
+    graph.set(begin, [[end, dist], ...graph.get(begin) || []])
 }
-console.log(pq.toString)
-console.log('poll', pq.poll())
-console.log('poll', pq.poll())
-console.log('poll', pq.poll())
-console.log('poll', pq.poll())
-console.log('poll', pq.poll())
-console.log('poll', pq.poll())
+let visited = Array.from(Array(node + 1), (_)=>Number.MAX_SAFE_INTEGER)
+let confirm = Array.from(Array(node + 1), (_)=>false)
+visited[0]=0
+confirm[0]=true
+
+let pq = new PriorityQueue()
+function dijkstra() {
+    visited[start] = 0
+    confirm[start] = true
+    for([end, dist] of graph.get(start) || []) {
+        visited[end] = dist
+        pq.offer(end, dist)
+    }
+
+    while(!pq.isEmpty) {
+        let {item, priority} = pq.poll()
+        if(confirm[item] == true) {
+            break;
+        }
+        visited[item] = priority
+        confirm[item] = true
+        for(let [end, dist] of graph.get(item)||[]) {
+            pq.offer(end, visited[item] + dist)
+        }        
+    }
+}
+dijkstra()
+console.log(visited.slice(1,))
+console.log(confirm.slice(1,))
+

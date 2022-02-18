@@ -3,9 +3,10 @@ const [node, path] = '6 11'.split(' ').map(el => parseInt(el))
 const start = 1
 const GRAPH = '1 2 2 1 3 5 1 4 1 2 3 3 2 4 2 3 2 3 3 6 5 4 3 3 4 5 1 5 3 1 5 6 2'.split(' ').map(el => parseInt(el))
 
-let graph = []
+let graph = new Map();
 for(let i = 0; i < path; i++) {
-    graph.push(GRAPH.slice(3 * i, 3 * (i+1)))
+    let [begin, end, dist] = GRAPH.slice(3 * i, 3 * (i+1))
+    graph.set(begin, [[end, dist], ...graph.get(begin) || []])
 }
 
 let visited = Array.from(Array(node +1), (_)=> Number.MAX_SAFE_INTEGER)
@@ -23,27 +24,27 @@ function getSmallestNode() {
         }
     }
 
-    if(nd != Number.MAX_SAFE_INTEGER)
-    confirm[nd] = true
+    if(nd != Number.MAX_SAFE_INTEGER) {
+        confirm[nd] = true
+    }
     return nd
 }
 function dijkstra(start) {
     visited[start]=0
     confirm[start]=true
-    
-    for(let [begin, end, dist] of graph) {
-        if(begin == start && !confirm[end])
-        visited[end] = dist
+        
+    for(let [end, dist] of graph.get(start)) {
+        if(!confirm[end]) {
+            visited[end] = dist            
+        }
     }
 
     for(let i = 0; i < node; i++) {
         let nd = getSmallestNode()
 
-        for(let [begin, end, dist] of graph) {
-            if(begin == nd) { // 시작값이 nd이고
-                if(visited[end] > dist + visited[begin]) { // 끝값까지 원래거리 > 끝값까지 거리 + nd까지의 거리 라면
-                    visited[end] =  dist + visited[begin]
-                }
+        for(let [end, dist] of graph.get(nd) || []) {
+            if(visited[end] > dist + visited[nd]) { // 끝값까지 원래거리 > 끝값까지 거리 + nd까지의 거리 라면
+                visited[end] =  dist + visited[nd]
             }
         }
     }
