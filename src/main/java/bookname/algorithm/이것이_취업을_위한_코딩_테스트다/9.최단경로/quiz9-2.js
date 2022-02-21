@@ -112,20 +112,19 @@ function dijkstra() {
     confirm[start] = true
 
     for(let [end, dist] of graph.get(start) || []) { // start부터 시작하는 노선 찾기
-        visited[end] = dist
         pq.offer([start, end], dist)
     }
 
-    for(let i = 1; i < path; i++) {
+    while(!graph.isEmpty) {
         let {item:[begin, end], priority} = pq.poll()
-
-        if(visited[begin] + priority < visited[end]) {
-            visited[end] = visited[begin] + priority
+        if(confirm[end] == true) {
+            break;
         }
-
+        visited[end] = priority
         confirm[end] = true
-        for(let [end2, priority] of graph.get(end) || []) {
-            pq.offer([end, end2], priority)
+
+        for(let [end2, dist] of graph.get(end) || []) {
+            pq.offer([start, end2], visited[end] + dist)
         }
     }
 
