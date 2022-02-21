@@ -4,17 +4,17 @@ class Stack {
     #array = []
     #start = 0
     #end = 0
+
     get isEmpty() {
         if(this.#start == this.#end) {
-            this.#start = this.#end = 0
             this.#array = []
+            this.#start = this.#end = 0
             return true
         }
         return false
     }
     push(item) {
-        this.#array[this.#end++] = item
-        return item
+        return this.#array[this.#end++] = item
     }
     pop() {
         if(this.isEmpty) {
@@ -28,19 +28,20 @@ class Queue {
     #array = []
     #start = 0
     #end = 0
+
     get isEmpty() {
         if(this.#start == this.#end) {
-            this.#start = this.#end = 0
             this.#array = []
+            this.#start = this.#end = 0
             return true
         }
         return false
     }
-    enqueue(item) {
-        this.#array[this.#end++] = item
-        return item
+
+    enqueue(item){
+        return this.#array[this.#end++] = item
     }
-    dequeue(){
+    dequeue() {
         if(this.isEmpty) {
             return false
         }
@@ -52,30 +53,32 @@ class PriorityQueue {
     #array = []
     #start = 0
     #end = 0
+
     get isEmpty() {
         if(this.#start == this.#end) {
-            this.#start = this.#end = 0
             this.#array = []
+            this.#start = this.#end = 0
             return true
         }
         return false
     }
-    binarySearch(start, end, priority) {
-        let mid = parseInt((start + end)/2)
-        if(start == end || start > end) {
+
+    binarySearch(begin, end, priority) {
+        if(begin >= end) {
             return end
         }
+        let mid = parseInt((begin + end)/2)
         if(this.#array[mid].priority == priority) {
             return mid
         } else if(this.#array[mid].priority > priority) {
-            return this.binarySearch(start, mid, priority)
+            return this.binarySearch(begin, mid, priority)
         } else {
             return this.binarySearch(mid+1, end, priority)
         }
     }
     offer(item, priority=item) {
-        let ind = this.binarySearch(this.#start, this.#end, priority)
-        this.#array.splice(ind, 0, {item, priority})
+        let pt = this.binarySearch(this.#start, this.#end, priority)
+        this.#array.splice(pt, 0, {item, priority})
         this.#end++
         return item
     }
@@ -85,51 +88,43 @@ class PriorityQueue {
         }
         return this.#array[this.#start++]
     }
-    get toString() {
-        return this.#array
-    }
 }
 
 const [node, path] = '6 11'.split(' ').map(el => parseInt(el))
 const start = 1
 const GRAPH = '1 2 2 1 3 5 1 4 1 2 3 3 2 4 2 3 2 3 3 6 5 4 3 3 4 5 1 5 3 1 5 6 2'.split(' ').map(el => parseInt(el))
+// 개선된 다익스트라 알고리즘
+let visited = Array(node + 1).fill(Number.MAX_SAFE_INTEGER)
+let confirm = Array(node + 1).fill(false)
+visited[0] = 0
+confirm[0] = true
 
 let graph = new Map()
 let pq = new PriorityQueue()
 for(let i = 0; i < path; i++) {
     let [begin, end, dist] = GRAPH.slice(i * 3, (i+1) * 3)
     graph.set(begin, [[end, dist], ...graph.get(begin) || []])
+    if(begin == start) {
+        pq.offer([begin, end], dist)
+    }
 }
-
-// 개선된 다익스트라
-let visited = Array(node+1).fill(Number.MAX_SAFE_INTEGER)
-let confirm = Array(node+1).fill(false)
-visited[0] = 0
-confirm[0] = true
-
-function dijkstra() {
+function dijkstra(){
     visited[start] = 0
     confirm[start] = true
 
-    for(let [end, dist] of graph.get(start) || []) { // start부터 시작하는 노선 찾기
-        pq.offer([start, end], dist)
-    }
-
-    while(!graph.isEmpty) {
+    while(!pq.isEmpty) {
         let {item:[begin, end], priority} = pq.poll()
-        if(confirm[end] == true) {
-            break;
+        if(confirm[end]) {
+            break
         }
         visited[end] = priority
         confirm[end] = true
 
         for(let [end2, dist] of graph.get(end) || []) {
-            pq.offer([start, end2], visited[end] + dist)
+            pq.offer([start, end2], dist + visited[end])
         }
     }
-
 }
-
 dijkstra()
 console.log(visited.slice(1,))
 console.log(confirm.slice(1,))
